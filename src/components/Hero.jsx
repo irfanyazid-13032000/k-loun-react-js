@@ -1,4 +1,3 @@
-
 import mesincuci from '../../public/img/mesincuci.jpg'
 
 export default function Hero() {
