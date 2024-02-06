@@ -4,6 +4,8 @@ import App from './App.jsx'
 import Hero from './components/Hero.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import User from './pages/User.jsx'
+import Customer from './pages/Customer.jsx'
+import Dashboard from './pages/Dashboard.jsx'
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -17,6 +19,12 @@ const router = createBrowserRouter([
   },{
     path:'/user',
     element:<User/>
+  },{
+    path:'/customer',
+    element:<Customer/>
+  },{
+    path:'/dashboard',
+    element:<Dashboard/>
   }
 ])
 
