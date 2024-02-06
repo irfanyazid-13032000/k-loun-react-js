@@ -1,8 +1,9 @@
 import cursor from '../../public/img/control.png'
-import logo from '../../public/img/logo.png'
+import logo from '../../public/img/logo-k-loun-biru.png'
 import chartfill from '../../public/img/Chart_fill.png'
 import setting from '../../public/img/Setting.png'
 import user from '../../public/img/User.png'
+
 import { useState } from 'react'
 export default function Sidebar() {
   const [open,setOpen] = useState(true)
