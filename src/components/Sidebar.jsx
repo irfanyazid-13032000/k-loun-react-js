@@ -12,7 +12,7 @@ export default function Sidebar() {
   const Menus = [
     {title:"Dashboard",src:chartfill,link:'/dashboard'},
     {title:"Setting",src:setting,link:'/setting'},
-    {title:"Account",src:user,gap:true,link:'/customer'},
+    {title:"Admin",src:user,gap:true,link:'/admin'},
   ]
   return (
     <div className="flex">
