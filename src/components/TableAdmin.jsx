@@ -1,10 +1,10 @@
 import React,{Fragment,useState} from 'react'
 import Layout from '../layout/Layout'
-import { Modal } from './Modal'
+import CreateAdmin from '../pages/CreateAdmin'
 
 export default function TableAdmin() {
 
-  const [visible,setVisible] = useState(true)
+  const [visible,setVisible] = useState(false)
 
   
   return (
@@ -44,7 +44,7 @@ export default function TableAdmin() {
 
       <button onClick={()=>{setVisible(true)}}>buka</button>
 
-      <Modal visible={visible} setVisible={setVisible}/>
+      <CreateAdmin visible={visible} setVisible={setVisible}/>
       </Fragment>
 
     </Layout>
