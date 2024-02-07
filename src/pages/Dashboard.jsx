@@ -5,7 +5,7 @@ import Card from '../components/Card.jsx';
 export default function Dashboard() {
   return (
     <Layout>
-      <Card/>
+      <Card title="pendapatan bulan januari" content="Rp.29.000.000"/>
     </Layout>
   )
 }

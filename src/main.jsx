@@ -6,6 +6,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import User from './pages/User.jsx'
 import Customer from './pages/Customer.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import Form from './components/Form.jsx'
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -25,6 +26,9 @@ const router = createBrowserRouter([
   },{
     path:'/dashboard',
     element:<Dashboard/>
+  },{
+    path:'/form',
+    element:<Form/>
   }
 ])
 
