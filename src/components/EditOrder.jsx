@@ -7,11 +7,14 @@ export default function EditOrder({ visible, setVisible, id }) {
   const [dateSubmitted, setDateSubmitted] = useState('');
   const [dateFinish, setDateFinish] = useState('');
   const [customer, setCustomer] = useState('');
-  const [pricePerKg, setPricePerKg] = useState('');
+  const [pricePerKg, setPricePerKg] = useState(0);
   const [weight, setWeight] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [status, setStatus] = useState('');
   const [paid, setPaid] = useState('');
+  const [errors, setErrors] = useState({});
+  const statusOptions = ['picked up', 'arrived at the shop', 'washed','dried in the sun','ironed','perfumed','wrapped','ready to be delivered'];
+
 
   const handleServiceChange = (e) => {
     setService(e.target.value);
@@ -49,16 +52,32 @@ export default function EditOrder({ visible, setVisible, id }) {
     setPaid(e.target.value);
   };
 
+  const validateInputs = () => {
+    const errors = {};
+
+    if (!service) {
+      errors.service = 'Service must be there';
+    }
+
+    if (!dateSubmitted) {
+      errors.dateSubmitted = 'date must be present';
+    }
+    if (!dateFinish) {
+      errors.dateFinish = 'date must be present';
+    }
+
+    // Add similar validation for other fields
+
+    return errors;
+  };
+
   const handleSubmit = () => {
-    console.log('Service:', service);
-    console.log('Date Submitted:', dateSubmitted);
-    console.log('Date Finish:', dateFinish);
-    console.log('Customer:', customer);
-    console.log('Price Per Kg:', pricePerKg);
-    console.log('Weight:', weight);
-    console.log('Total Price:', totalPrice);
-    console.log('Status:', status);
-    console.log('Paid:', paid);
+    const validationErrors = validateInputs();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
     // Kode untuk menyimpan perubahan atau melakukan operasi lainnya
 
@@ -79,10 +98,15 @@ export default function EditOrder({ visible, setVisible, id }) {
             <input
               type='text'
               id='service'
-              className='w-full px-4 py-2 border rounded-md'
+              className={`w-full px-4 py-2 border rounded-md ${
+                errors.service ? 'border-red-500' : ''
+              }`}
               value={service}
               onChange={handleServiceChange}
             />
+            {errors.service && (
+              <p className='text-red-500 text-sm'>{errors.service}</p>
+            )}
           </div>
           <div className='mb-4'>
             <label className='block text-sm text-gray-700' htmlFor='dateSubmitted'>
@@ -95,6 +119,9 @@ export default function EditOrder({ visible, setVisible, id }) {
               value={dateSubmitted}
               onChange={handleDateSubmittedChange}
             />
+             {errors.dateSubmitted && (
+              <p className='text-red-300 text-sm'>{errors.dateSubmitted}</p>
+            )}
           </div>
           <div className='mb-4'>
             <label className='block text-sm text-gray-700' htmlFor='dateFinish'>
@@ -107,6 +134,9 @@ export default function EditOrder({ visible, setVisible, id }) {
               value={dateFinish}
               onChange={handleDateFinishChange}
             />
+            {errors.dateFinish && (
+              <p className='text-red-300 text-sm'>{errors.dateFinish}</p>
+            )}
           </div>
           <div className='mb-4'>
             <label className='block text-sm text-gray-700' htmlFor='customer'>
@@ -125,7 +155,7 @@ export default function EditOrder({ visible, setVisible, id }) {
               Price Per Kg
             </label>
             <input
-              type='text'
+              type='number'
               id='pricePerKg'
               className='w-full px-4 py-2 border rounded-md'
               value={pricePerKg}
@@ -160,25 +190,34 @@ export default function EditOrder({ visible, setVisible, id }) {
             <label className='block text-sm text-gray-700' htmlFor='status'>
               Status
             </label>
-            <input
-              type='text'
+            <select
               id='status'
               className='w-full px-4 py-2 border rounded-md'
               value={status}
               onChange={handleStatusChange}
-            />
+            >
+              <option value='' disabled>Select Status</option>
+              {statusOptions.map((option) => (
+                <option key={option} selected value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
           <div className='mb-4'>
             <label className='block text-sm text-gray-700' htmlFor='paid'>
               Paid
             </label>
-            <input
-              type='text'
-              id='paid'
+            <select
+              id='status'
               className='w-full px-4 py-2 border rounded-md'
               value={paid}
               onChange={handlePaidChange}
-            />
+            >
+               <option value='yes'>yes</option>
+               <option value='no'>no</option>
+
+            </select>
           </div>
           <button
             className='bg-blue-500 text-white px-4 py-2 rounded-md'
