@@ -10,6 +10,7 @@ import Form from './components/Form.jsx'
 import TableAdmin from './components/TableAdmin.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
+import TableOrder from './components/TableOrder.jsx'
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path:'/register',
     element:<Register/>
+  },
+  {
+    path:'/order',
+    element:<TableOrder/>
   }
 ])
 
