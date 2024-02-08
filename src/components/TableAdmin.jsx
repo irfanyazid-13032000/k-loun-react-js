@@ -42,7 +42,7 @@ export default function TableAdmin() {
           </table>
       </div>
 
-      <button onClick={()=>{setVisible(true)}}>buka</button>
+      <button className='text-black text-xl place-self-end' onClick={()=>{setVisible(true)}}>buka</button>
 
       <CreateAdmin visible={visible} setVisible={setVisible}/>
       </Fragment>

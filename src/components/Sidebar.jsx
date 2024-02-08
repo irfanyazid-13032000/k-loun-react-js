@@ -3,6 +3,7 @@ import logo from '../../public/img/logo-k-loun-biru.png'
 import chartfill from '../../public/img/Chart_fill.png'
 import setting from '../../public/img/Setting.png'
 import user from '../../public/img/User.png'
+import kloun from '../../public/img/k-loun-favicon-biru.png'
 import { Link,Outlet } from 'react-router-dom';
 
 
@@ -13,6 +14,7 @@ export default function Sidebar() {
     {title:"Dashboard",src:chartfill,link:'/dashboard'},
     {title:"Setting",src:setting,link:'/setting'},
     {title:"Admin",src:user,gap:true,link:'/admin'},
+    {title:"Order",src:kloun,link:'/order'},
   ]
   return (
     <div className="flex">
