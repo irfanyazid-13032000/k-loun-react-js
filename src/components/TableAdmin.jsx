@@ -1,6 +1,7 @@
 import React,{Fragment,useState} from 'react'
 import Layout from '../layout/Layout'
 import CreateAdmin from '../pages/CreateAdmin'
+import Button from './Button'
 
 export default function TableAdmin() {
 
@@ -24,6 +25,10 @@ export default function TableAdmin() {
                       <th scope="col" className="px-6 py-3">
                           Role
                       </th>
+                      <th scope="col" className="px-6 py-3 text-center">
+                          Action
+                      </th>
+                      
                   </tr>
               </thead>
               <tbody>
@@ -36,6 +41,11 @@ export default function TableAdmin() {
                       </td>
                       <td className="px-6 py-4 text-black">
                           Admin
+                      </td>
+                      <td className="px-6 py-4 text-black">
+                       <Button>
+                          delete
+                       </Button>
                       </td>
                   </tr>
               </tbody>
