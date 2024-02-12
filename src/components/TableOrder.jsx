@@ -1,15 +1,15 @@
 import React,{Fragment,useState} from 'react'
 import Layout from '../layout/Layout'
 import EditOrder from './EditOrder'
+import Search from './Search'
 
 export default function TableOrder() {
-
   const [visible,setVisible] = useState(false)
-
   
   return (
     <Layout>
       <Fragment>
+        <Search/>
       <div className="relative overflow-x-auto">
           <table className="w-full text-sm text-left rtl:text-right text-dark-purple dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-dark-purple dark:text-gray-400">
