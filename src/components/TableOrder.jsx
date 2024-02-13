@@ -2,6 +2,7 @@ import React,{Fragment,useState} from 'react'
 import Layout from '../layout/Layout'
 import EditOrder from './EditOrder'
 import Search from './Search'
+import PaginatedItems from '../components/Paging.jsx'
 
 export default function TableOrder() {
   const [visible,setVisible] = useState(false)
@@ -92,6 +93,8 @@ export default function TableOrder() {
 
 
       <EditOrder visible={visible} setVisible={setVisible} id={1}/>
+
+      <PaginatedItems itemsPerPage={4}/>
 
       </Fragment>
 

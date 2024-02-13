@@ -11,6 +11,8 @@ import TableAdmin from './components/TableAdmin.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import TableOrder from './components/TableOrder.jsx'
+import PaginatedItems from '../src/components/Paging.jsx'
+import Paginate from './components/Paginate.jsx'
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
   {
     path:'/order',
     element:<TableOrder/>
+  },
+  {
+    path:'/paging',
+    element:<PaginatedItems itemsPerPage={4}/>
+  },
+  {
+    path:'/paginate',
+    element:<Paginate/>
   }
 ])
 

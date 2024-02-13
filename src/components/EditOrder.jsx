@@ -13,7 +13,7 @@ export default function EditOrder({ visible, setVisible, id }) {
   const [status, setStatus] = useState('');
   const [paid, setPaid] = useState('');
   const [errors, setErrors] = useState({});
-  const statusOptions = ['picked up', 'arrived at the shop', 'washed','dried in the sun','ironed','perfumed','wrapped','ready to be delivered'];
+  const statusOptions = ['picked up', 'arrived at the shop', 'washed','dried in the sun','ironed','perfumed','delivering'];
 
 
   const handleServiceChange = (e) => {
